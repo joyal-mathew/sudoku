@@ -1,0 +1,89 @@
+html {
+    height: 100%;
+    display: grid;
+}
+
+body {
+    user-select: none;
+    font-family: 'Courier New', Courier, monospace;
+    margin: auto;
+    text-align: center;
+}
+
+#sudokuBoard td {
+    position: relative;
+    border: 1px solid #808080;
+    width: 7vh;
+    height: 7vh;
+    text-align: center;
+    font-size: 6vh;
+    margin: 0;
+    padding: 1vh;
+}
+
+#sudokuBoard td:hover::after {
+    content: "◯";
+    color: #C3C3C34D;
+    position: absolute;
+    left: 1.25vh;
+    top: 1.25vh;
+}
+
+#sudokuBoard tr:nth-child(3n) td {
+    border-bottom: 2px solid #000000;
+}
+
+#sudokuBoard tr:nth-child(1) td {
+    border-top: 2px solid #000000;
+}
+
+#sudokuBoard tr td:nth-child(3n) {
+    border-right: 2px solid #000000;
+}
+
+#sudokuBoard tr td:nth-child(1) {
+    border-left: 2px solid #000000;
+}
+
+.selected {
+    animation-name: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    0% { background-color: #ACCEF7; }
+    50% { background-color: #E9E9E9; }
+    100% { background-color: #ACCEF7; }
+}
+
+.controls {
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    font-weight: bold;
+    padding: 4px;
+    font-family: inherit;
+    font-size: 2vh;
+}
+
+.controls:hover {
+    background-color: #DBEAFB;
+}
+
+.controls:focus {
+    outline: none;
+}
+
+.controls:active {
+    transform: translate(1px, 1px);
+    box-shadow: -1px -1px #000000;
+}
+
+.solved {
+    color: #007e94;
+}
+
+#error {
+    color: #FFFFFF;
+    font-weight: bold;
+}
